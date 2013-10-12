@@ -1,8 +1,17 @@
-<div ng-repeat="company in companies">
+Yay!
+<form ng-controller="CreateCompanyCtrl" ng-submit="createCompany()">
+    <input type="text" placeholder="Name" ng-model="name">
+    <br>
+    <textarea ng-model="description" placeholder="Description"></textarea>
+    <br>
+    <button type="submit" class="btn btn-default" >Save</button>
+</form>
+
+<div ng-repeat="company in companies | orderBy:sortBySelectedId">
     <h4 id="company-{{company._id}}">
         <img src="/img/image.png" class="company__img--mini">
         {{company.name}}
     </h4>
     {{company.about}}
-    <a href="company.link">Link</a>
+    <a href="{{company.link}}">Link</a>
 </div>

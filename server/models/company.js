@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var companySchema = new Schema({
-  name: String,
+  name: { type: String, unique: true, required: true },
   image: String,
   link: String,
   about: String,

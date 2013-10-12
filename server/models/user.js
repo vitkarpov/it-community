@@ -5,11 +5,16 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
-  name: String,
-  surname: String,
+  name: { type: String, required: true },
+  surname: { type: String, required: true },
   image: String,
   email: String,
-  about: String
+  about: String,
+  googleOpenID: String
 });
+
+userSchema.statics.findByGoogle = function (openID, cb) {
+  this.find({ googleOpenID: openID }, cb);
+}
 
 module.exports = mongoose.model('User', userSchema);
