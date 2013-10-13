@@ -7,7 +7,6 @@ angular.module('clientApp')
       'AngularJS',
       'Karma'
     ];
-    $rootScope.companies = Company.query();
 //    $rootScope.events = Event.query();
 //    $rootScope.news = News.query();
 //    $rootScope.startups = Startup.query();

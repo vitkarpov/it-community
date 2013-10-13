@@ -10,7 +10,8 @@ var eventSchema = new Schema({
   fullInfo: String,
   image: String,
   owner: Schema.Types.ObjectId,
-  data: Date
+  created: { type: Date, default: Date.now },
+  date: Date
 });
 
 module.exports = mongoose.model('Event', eventSchema);

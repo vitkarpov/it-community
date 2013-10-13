@@ -12,11 +12,16 @@
 
 <div ng-repeat="company in companies">
     <a href="#companies/{{company._id}}">
-    <h4 id="company-{{company._id}}">
-        <img src="/img/image.png" class="company__img--mini">
-        {{company.name}}
-    </h4>
+        <h4 id="company-{{company._id}}">
+            <img src="/img/image.png" class="company__img--mini">
+            {{company.name}}
+        </h4>
     </a>
     {{company.about}}
-    <a href="{{company.link}}">Link</a>
+    <br>
+
+    <p>
+        Owner: {{company.owner.name}}
+        <br>
+        <a href="{{company.link}}">Link</a>
 </div>

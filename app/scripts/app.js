@@ -50,4 +50,8 @@ angular.module('clientApp', ['ngResource'])
     }];
 
     $httpProvider.responseInterceptors.push(interceptor);
-  });
+  })
+  .run(['$rootScope', 'Company', function ($rootScope, Company) {
+    //TODO awww, this is so stupid & simple
+    $rootScope.companies = Company.query();
+  }]);
