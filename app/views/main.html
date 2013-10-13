@@ -1,27 +1,260 @@
-<h1>Events</h1>
-<div ng-repeat="event in events">
-    <h4 id="company-{{company._id}}">
-        <img src="/img/image.png" class="company__img--mini">
-        {{event.name}}
-    </h4>
-    {{event.about}}
-    <a href="{{company.link}}">Link</a>
+<div class="nav-opener"></div>
+<div class="container">
+<header>
+    <div class="left-col">
+        <div class="logo">
+            <div class="big">IT сообщество</div>
+            <div class="small">в Ростове-на-Дону <a href="#" class="icon icon-vk"></a><a href="#"
+                                                                                         class="icon icon-fb"></a><a
+                    href="#" class="icon icon-tw"></a></div>
+        </div>
+    </div>
+    <div class="right-col">
+        <div class="search-title">Всё об ИТ в Ростове-на-Дону Мероприятия. Новости. Бизнес</div>
+        <form class="search-form">
+            <input type="text" placeholder="Можно начать с поиска">
+            <input type="submit" value="">
+        </form>
+    </div>
+    <div class="clearfix"></div>
+</header>
+<div class="content">
+    <div class="left-col">
+        <div class="tab">
+            <div class="tab-title"><span>Мероприятия</span></div>
+            <div class="tab-content">
+                <div class="event">
+                    <div class="title"><a href="#">Встреча любителей Microsoft</a><span class="new">Новое</span>
+                    </div>
+                    <div class="pic"><img src="i/demo-wiki.jpg"></div>
+                    <div class="info">
+                        <div class="text">37 студентов успешно сдали и защитили экзамен. По результатам экзамена и
+                            собеседований на второй этап было принято 22 студента. Все они проходят практику в
+                            реальных командах Яндекса, разрабатывающих интерфейсы для Поиска, Карт, Маркета, Почты и
+                        </div>
+                        <div class="participants">Участники: <span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="more">и еще <b>20</b> человек </span>
+                        </div>
+                        <div class="org-date"><span class="org">Организатор: <a href="#">Василий
+                            Пупкин</a></span><span class="date">Дата мероприятия: <b>14.10.13</b></span></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="event"></div>
+                    <div class="title"><a href="#">Встреча любителей Microsoft</a><span class="new">Новое</span>
+                    </div>
+                    <div class="pic"><img src="i/demo-wiki.jpg"></div>
+                    <div class="info">
+                        <div class="text">37 студентов успешно сдали и защитили экзамен. По результатам экзамена и
+                            собеседований на второй этап было принято 22 студента. Все они проходят практику в
+                            реальных командах Яндекса, разрабатывающих интерфейсы для Поиска, Карт, Маркета, Почты и
+                        </div>
+                        <div class="participants">Участники: <span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="more">и еще <b>20</b> человек </span>
+                        </div>
+                        <div class="org-date"><span class="org">Организатор: <a href="#">Василий
+                            Пупкин</a></span><span class="date">Дата мероприятия: <b>14.10.13</b></span></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="event"></div>
+                    <div class="title"><a href="#">Встреча любителей Microsoft</a></div>
+                    <div class="pic"><img src="i/demo-wiki.jpg"></div>
+                    <div class="info">
+                        <div class="text">37 студентов успешно сдали и защитили экзамен. По результатам экзамена и
+                            собеседований на второй этап было принято 22 студента. Все они проходят практику в
+                            реальных командах Яндекса, разрабатывающих интерфейсы для Поиска, Карт, Маркета, Почты и
+                        </div>
+                        <div class="participants">Участники: <span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="avatar"> <img
+                                src="i/demo-avatar.jpg"></span><span class="more">и еще <b>20</b> человек </span>
+                        </div>
+                        <div class="org-date"><span class="org">Организатор: <a href="#">Василий
+                            Пупкин</a></span><span class="date">Дата мероприятия: <b>14.10.13</b></span></div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="watch-all"><a href="#">Просмотреть все</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="right-col">
+        <div class="right-login"><a href="#">Войти в IT <span>☺</span></a></div>
+        <!-- VK Widget -->
+        <div id="vk_groups"></div>
+        <script type="text/javascript">
+            VK.Widgets.Group("vk_groups", {mode: 0, width: "249", height: "400", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 55614321);
+        </script>
+        <div class="right-tags">
+            <p>Тег на Хабре: <a href="#">itevents</a></p>
+            <p>Тег в Твиттере: <a href="#">#itevents</a></p>
+        </div>
+        <div class="right-persons">
+            <div class="title"><a href="#">Личности</a></div>
+            <div class="avatars"><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
+                    src="i/demo-avatar2.jpg"></a><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
+                    src="i/demo-avatar2.jpg"></a><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
+                    src="i/demo-avatar2.jpg"></a><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
+                    src="i/demo-avatar2.jpg"></a>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
 </div>
+<div class="conten-bottom">
+    <div class="tab tab-left">
+        <div class="tab-title"><span>Новости</span></div>
+        <div class="tab-content">
+            <ul class="news">
+                <li><span class="date">15.10</span><span class="title">Артемий Лебедев сказал: <a href="#">”Деда-мороза
+                    не существует!”</a> </span><span class="new">Новое</span>
 
-<h1>Companies</h1>
+                    <div class="author">Автор: <a href='#'>Артемий Лебедев</a></div>
+                </li>
+                <li><span class="date">15.10</span><span class="title">Дипломат назвал <a href="#">безответственной
+                    поездку путешественника из РФ в Сирию</a> </span><span class="new">Новое</span>
 
-<div ng-repeat="company in companies">
-    <a href="#companies/{{company._id}}">
-        <h4 id="company-{{company._id}}">
-            <img src="/img/image.png" class="company__img--mini">
-            {{company.name}}
-        </h4>
-    </a>
-    {{company.about}}
-    <br>
+                    <div class="author">Автор: <a href='#'>Артемий Лебедев</a></div>
+                </li>
+                <li><span class="date">15.10</span><span class="title">Артемий Лебедев сказал: <a href="#">”Деда-мороза
+                    не существует!”</a> </span><span class="new">Новое</span>
 
-    <p>
-        Owner: {{company.owner.name}}
-        <br>
-        <a href="{{company.link}}">Link</a>
+                    <div class="author">Автор: <a href='#'>Артемий Лебедев</a></div>
+                </li>
+                <li><span class="date">15.10</span><span class="title">Дипломат назвал <a href="#">безответственной
+                    поездку путешественника из РФ в Сирию</a> </span><span class="new">Новое</span>
+
+                    <div class="author">Автор: <a href='#'>Артемий Лебедев</a></div>
+                </li>
+                <li><span class="date">15.10</span><span class="title">Артемий Лебедев сказал: <a href="#">”Деда-мороза
+                    не существует!”</a> </span><span class="new">Новое</span>
+
+                    <div class="author">Автор: <a href='#'>Артемий Лебедев</a></div>
+                </li>
+            </ul>
+            <div class="watch-all"><a href="#">Просмотреть все</a></div>
+        </div>
+    </div>
+    <div class="tab tab-right">
+        <div class="tab-title"><span>Вакансии</span></div>
+        <div class="tab-content">
+            <ul class="news vacancy">
+                <li><span class="date">15.10</span><span class="company">ОАО “Яндекс”</span>
+
+                    <div class="title"><a href="#">Frontend-разработчик</a> <span class="new">Новое</span></div>
+                    <div class="conditions">от 30000 до 40000 руб, Батайск</div>
+                </li>
+                <li><span class="date">15.10</span><span class="company">ОАО “Яндекс”</span>
+
+                    <div class="title"><a href="#">Frontend-разработчик</a> <span class="new">Новое</span></div>
+                    <div class="conditions">от 30000 до 40000 руб, Батайск</div>
+                </li>
+                <li><span class="date">15.10</span><span class="company">ОАО “Яндекс”</span>
+
+                    <div class="title"><a href="#">Frontend-разработчик</a> <span class="new">Новое</span></div>
+                    <div class="conditions">от 30000 до 40000 руб, Батайск</div>
+                </li>
+                <li><span class="date">15.10</span><span class="company">ОАО “Яндекс”</span>
+
+                    <div class="title"><a href="#">Frontend-разработчик</a> <span class="new">Новое</span></div>
+                    <div class="conditions">от 30000 до 40000 руб, Батайск</div>
+                </li>
+            </ul>
+            <div class="watch-all"><a href="#">Просмотреть все</a></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="tab tab-left tab-last">
+        <div class="tab-title"><span>Компании</span></div>
+        <div class="tab-content">
+            <ul class="companies">
+                <li>
+                    <div class="pic"><img src="i/demo-vk.jpg"></div>
+                    <div class="info">
+                        <div class="title"><a href="#">VK.com</a></div>
+                        <div class="text">Делал свою социальную сеть типа ВК до того, как это стало мейнстримом
+                        </div>
+                        <div class="person">Представитель: <a href="#">Павел Дуров</a></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li>
+                    <div class="pic"><img src="i/demo-vk.jpg"></div>
+                    <div class="info">
+                        <div class="title"><a href="#">VK.com</a></div>
+                        <div class="text">Делал свою социальную сеть типа ВК до того, как это стало мейнстримом
+                        </div>
+                        <div class="person">Представитель: <a href="#">Павел Дуров</a></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li>
+                    <div class="pic"><img src="i/demo-vk.jpg"></div>
+                    <div class="info">
+                        <div class="title"><a href="#">VK.com</a></div>
+                        <div class="text">Делал свою социальную сеть типа ВК до того, как это стало мейнстримом
+                        </div>
+                        <div class="person">Представитель: <a href="#">Павел Дуров</a></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+            <div class="watch-all"><a href="#">Просмотреть все</a></div>
+        </div>
+    </div>
+    <div class="tab tab-right tab-last">
+        <div class="tab-title"><span>Стартапы</span></div>
+        <div class="tab-content">
+            <ul class="companies">
+                <li>
+                    <div class="pic"><img src="i/demo-vk.jpg"></div>
+                    <div class="info">
+                        <div class="title"><a href="#">VK.com </a><span class="new">Новое</span></div>
+                        <div class="text">Делал свою социальную сеть типа ВК до того, как это стало мейнстримом
+                        </div>
+                        <div class="person">Представитель: <a href="#">Павел Дуров</a></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li>
+                    <div class="pic"><img src="i/demo-vk.jpg"></div>
+                    <div class="info">
+                        <div class="title"><a href="#">VK.com</a></div>
+                        <div class="text">Делал свою социальную сеть типа ВК до того, как это стало мейнстримом
+                        </div>
+                        <div class="person">Представитель: <a href="#">Павел Дуров</a></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li>
+                    <div class="pic"><img src="i/demo-vk.jpg"></div>
+                    <div class="info">
+                        <div class="title"><a href="#">VK.com</a></div>
+                        <div class="text">Делал свою социальную сеть типа ВК до того, как это стало мейнстримом
+                        </div>
+                        <div class="person">Представитель: <a href="#">Павел Дуров</a></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+            <div class="watch-all"><a href="#">Просмотреть все</a></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <footer>
+        <p>© IT сообщество Ростова-на-Дону, 2013<br>Сайт сделан самим сообществом. <a href="#">Читать историю</a>
+        </p>
+    </footer>
+</div>
 </div>

@@ -1,0 +1,465 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size 16px
+    line-height 1.3
+    position: relative
+    min-width 980px;
+    color #000
+    background: url(../i/bg.jpg)
+}
+.container {
+    width 980px
+    margin 0 auto
+}
+a:hover
+    text-decoration: none
+input
+    outline 0
+    
+header 
+    padding-top 65px
+    margin-bottom 70px
+    .left-col
+        float: left
+        width 705px
+    .right-col
+        float: right
+        width 250px
+    .logo
+        padding-left 28px
+    .big
+        font-size 69px
+        line-height 69px
+        margin-bottom 10px
+    .small
+        font-size 30px
+        line-height 32px
+    .icon 
+        display: inline-block
+        width 32px
+        height 32px
+        vertical-align: middle
+        margin-left 15px
+    .icon-vk
+        background: url('../i/icon-vk.png')
+    .icon-fb
+        background: url('../i/icon-fb.png')
+    .icon-tw
+        background: url('../i/icon-tw.png')
+    .search-title
+        color #6f6d6e
+        font-size 18px
+        margin-bottom 15px
+    .search-form
+        background: url(../i/search-form.png)
+        width 240px
+        height 31px
+        position: relative
+        input[type="text"]
+            border: none
+            padding: 0
+            height 31px
+            margin: 0
+            background: none
+            font-size 12px
+            font-family: Arial, Helvetica, sans-serif
+            padding-left 12px
+            width 200px
+            outline 0
+        input[type="submit"]
+            border: none
+            position: absolute
+            right 2px
+            top 2px
+            background: url(../i/search-button.png)
+            width 26px
+            height 27px
+            cursor: pointer
+            padding: 0
+a
+    color #00adef
+
+.content
+    margin-top 70px
+    .left-col
+        float: left
+        width 705px
+    .right-col
+        float: right
+        width 250px
+.tab
+    margin-bottom 40px
+    .tab-title
+        font-size 38px;
+        color #6f6d6e
+        line-height 54px
+        span 
+            display: inline-block
+            padding 0 28px
+            background: #fff
+            border: 1px solid #d7d7d7
+            border-radius 5px 5px 0 0
+            border-bottom: 1px solid #fff
+            position: relative
+            top 1px
+    .tab-content
+        background: #fff
+        border: 1px solid #d7d7d7
+        padding 28px 28px 15px 28px
+
+.event
+    margin-bottom 35px
+    a
+        border-bottom: 1px solid #9fe0f9
+        text-decoration: none
+    a:hover
+        border-bottom: 1px solid transparent
+        
+    .title
+        margin-bottom 15px
+        font-size 24px
+        
+        .new
+            color #f2511b;        
+            font-size 14px;
+            vertical-align: super
+            margin-left 5px
+    .pic
+        float: left
+        width 120px
+        text-align: center
+        height 120px
+        line-height 120px
+        img 
+            width auto
+            height auto
+            max-width 100%
+            max-height 100%
+    .info
+        margin-left 135px
+    .text
+        font-size 16px;
+        line-height 17px
+        margin-bottom 20px
+    .participants, .org-date
+        color #6f6d6e
+        font-style italic
+        font-size 14px
+        font-family: Arial, Helvetica, sans-serif
+    .participants
+        margin-bottom 5px
+        .more
+            margin-left 8px
+    .avatar
+        display: inline-block
+        vertical-align: bottom
+        margin-left 1px
+    .org-date
+        .org
+            float: left
+        .date
+            float: right
+    
+.watch-all
+    text-align: right
+    a 
+        color #f2511b
+        border-bottom: 1px solid #f7b59f
+        text-decoration: none
+        &:hover
+            border-bottom: 1px solid transparent
+.conten-bottom
+    .tab
+        width 470px
+    .tab-left
+        float: left
+    .tab-right
+        float: right
+    .tab-last
+        margin-bottom 0
+ul.news
+    list-style: none
+    padding: 0
+    margin: 0
+    a
+        border-bottom: 1px solid #9fe0f9
+        text-decoration: none
+    a:hover
+        border-bottom: 1px solid transparent
+    li
+        margin-bottom 20px
+        position: relative
+        line-height 1.1
+        &:last-child
+            margin-bottom 10px
+    .date 
+        font-size 12px
+        color #6f6d6e
+        display: inline-block
+        margin-right 5px
+    .new
+        color #f2511b;        
+        font-size 14px;
+        vertical-align: super
+        margin-left 5px
+        position: relative
+        top 3px
+    .author
+        font-style: italic
+        color #6f6d6e
+        margin-top 10px
+        clear noth
+    &.vacancy
+        li
+            margin-bottom 40px
+            &:last-child
+                margin-bottom 10px
+        .company
+            font-size 14px
+        .title
+            font-size 18px
+            margin-bottom 10px
+        .conditions
+            font-size 14px
+ul.companies
+    list-style: none
+    padding: 0
+    margin: 0
+    li
+        margin-bottom 25px
+    a
+        border-bottom: 1px solid #9fe0f9
+        text-decoration: none
+    a:hover
+        border-bottom: 1px solid transparent
+    .pic
+        float: left
+        width 108px
+        text-align: center
+        height 80px
+        line-height 80px
+        img
+            max-height 80px
+            max-width 80px
+            width auto
+            height auto
+            vertical-align: top
+    .info
+        margin-left 110px
+    .title
+        font-size 18px
+    .person
+        font-style: italic
+        font-size 12px
+        font-family: Arial, Helvetica, sans-serif
+        color #393939
+        a
+            font-size 14px
+    .new
+        color #f2511b;        
+        font-size 14px;
+        vertical-align: super
+        margin-left 5px
+        position: relative
+        display: inline-block
+        margin-top -3px
+
+footer
+    text-align: center
+    padding 40px 0
+    line-height 1.5
+    a
+        border-bottom: 1px solid #9fe0f9
+        text-decoration: none
+    a:hover
+        border-bottom: 1px solid transparent
+.nav-opener
+    position: fixed
+    background: url(../i/nav-opener.png);
+    width 33px
+    height 28px
+    left 20px
+    top 35px
+    z-index 1000
+    cursor: pointer
+.right-tags
+    margin 28px 0
+    p
+        margin: 10px 0
+    a
+        border-bottom: 1px solid #9fe0f9
+        text-decoration: none
+    a:hover
+        border-bottom: 1px solid transparent
+.right-persons
+    margin-top 28px
+    .title
+        margin-bottom 15px
+        a
+            font-size 24px
+            border-bottom: 1px solid #9fe0f9
+            text-decoration: none
+        a:hover
+            border-bottom: 1px solid transparent
+    .avatars
+        a
+            width 50px
+            height 50px
+            float: left
+            margin-bottom 13px
+            margin-right 16px
+            &:nth-child(4n) 
+                margin-right 0
+        img
+            display: block
+            width 50px
+.right-login
+    width 245px
+    height 62px
+    padding 1px
+    border: 1px solid #c1c1c0
+    background: #d2d2d1
+    border-radius 5px
+    margin-bottom 28px
+
+    a
+        background: url(../i/button.png) no-repeat left top
+        height 62px
+        display: block
+        width 245px
+        text-align: center
+        color:#fff;
+        text-decoration: none
+        line-height 62px
+        font-size 24px
+        text-shadow 0px 1px 1px rgba(0,0,0,0.3)
+        font-family: Arial, Helvetica, sans-serif
+        &:hover
+            background-position: 0 -62px
+        &:active
+            background-position: 0 -124px
+        span
+            font-size 32px
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
