@@ -49,7 +49,7 @@ function initExpress(config) {
     app.set('port', process.env.PORT || config.http.port);
     // TODO move this to dev and production.
     // Or use config.
-    app.use(express.static(path.join(__dirname, '../client/app')));
+    app.use(express.static(path.join(__dirname, 'client/app')));
     app.use(express.favicon());
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
@@ -107,22 +107,6 @@ configure()
     throw err
   })
   .done();
-//
-//// Mongoose connection
-//mongoose.connect('mongodb://localhost/it-community');
-//
-//var db = mongoose.connection;
-//db.on('error', console.error.bind(console, 'connection error:'));
-//db.once('open', function callback () {
-//  // yay!
-//  console.log('yay!');
-//});
-
-
-//
-//http.createServer(app).listen(app.get('port'), function(){
-//  console.log('Express server listening on port ' + app.get('port'));
-//});
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
