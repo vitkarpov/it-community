@@ -1,0 +1,9 @@
+{
+  "mongo": {
+    "host": "localhost",
+    "database": "it-community"
+  },
+  "http": {
+    "port": 3000
+  }
+}
