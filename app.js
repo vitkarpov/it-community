@@ -49,7 +49,7 @@ function initExpress(config) {
     app.set('port', process.env.PORT || config.http.port);
     // TODO move this to dev and production.
     // Or use config.
-    app.use(express.static(path.join(__dirname, 'client/app')));
+    app.use(express.static(path.join(__dirname, 'app')));
     app.use(express.favicon());
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
