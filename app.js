@@ -7,7 +7,7 @@ var express = require('express');
 //var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-var api = require('./routes/api');
+var api = require('./server/routes/api');
 var passport = require('passport');
 var mongoose = require('mongoose');
 var q = require('q');
@@ -17,7 +17,7 @@ function configure() {
   var deferred = q.defer()
     , env = process.env.NODE_ENV;
 
-  var file = path.join(__dirname, 'config/defaults.json')
+  var file = path.join(__dirname, './server/config/defaults.json')
   //path.join(__dirname, 'config/' + env + '.json'),
   confisto({
     file: file
@@ -49,6 +49,8 @@ function initExpress(config) {
     app.set('port', process.env.PORT || config.http.port);
     // TODO move this to dev and production.
     // Or use config.
+    //app.set('views', __dirname + '/app');
+    //app.engine('html', require('ejs').renderFile);
     app.use(express.static(path.join(__dirname, 'app')));
     app.use(express.favicon());
     app.use(express.logger('dev'));
@@ -84,12 +86,7 @@ function initExpress(config) {
   // POST
   app.post('/api/companies', ensureAuthenticated, api.createCompany);
 
-  require('./routes/auth')(app);
-
-  app.get('/test', function(req, res) {
-    debugger;
-    res.send(req.user);
-  });
+  require('./server/routes/auth')(app);
 
   app.server = http.createServer(app);
 

@@ -285,16 +285,16 @@ a {
 .watch-all a:hover {
   border-bottom: 1px solid transparent;
 }
-.conten-bottom .tab {
+.content-bottom .tab {
   width: 470px;
 }
-.conten-bottom .tab-left {
+.content-bottom .tab-left {
   float: left;
 }
-.conten-bottom .tab-right {
+.content-bottom .tab-right {
   float: right;
 }
-.conten-bottom .tab-last {
+.content-bottom .tab-last {
   margin-bottom: 0;
 }
 ul.news {
