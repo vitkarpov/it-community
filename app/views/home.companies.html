@@ -1,33 +1,14 @@
 <div class="tab-title"><span>Компании</span></div>
 <div class="tab-content">
     <ul class="companies">
-        <li>
+        <li ng-repeat="company in companies">
             <div class="pic"><img src="i/demo-vk.jpg"></div>
             <div class="info">
-                <div class="title"><a href="/dash#/companies/123">VK.com</a></div>
-                <div class="text">Делал свою социальную сеть типа ВК до того, как это стало мейнстримом
+                <div class="title"><a ui-sref="tabs.companies(companyId:company.id)">{{company.name}}</a></div>
+                <div class="text">{{company.about}}</div>
+                <div class="person">
+                    Представитель: <a ui-sref="tabs.users(userId:company.owner.id)">{{company.owner.name}} {{company.owner.surname}}</a>
                 </div>
-                <div class="person">Представитель: <a href="#">Павел Дуров</a></div>
-            </div>
-            <div class="clearfix"></div>
-        </li>
-        <li>
-            <div class="pic"><img src="i/demo-vk.jpg"></div>
-            <div class="info">
-                <div class="title"><a href="#">VK.com</a></div>
-                <div class="text">Делал свою социальную сеть типа ВК до того, как это стало мейнстримом
-                </div>
-                <div class="person">Представитель: <a href="#">Павел Дуров</a></div>
-            </div>
-            <div class="clearfix"></div>
-        </li>
-        <li>
-            <div class="pic"><img src="i/demo-vk.jpg"></div>
-            <div class="info">
-                <div class="title"><a href="#">VK.com</a></div>
-                <div class="text">Делал свою социальную сеть типа ВК до того, как это стало мейнстримом
-                </div>
-                <div class="person">Представитель: <a href="#">Павел Дуров</a></div>
             </div>
             <div class="clearfix"></div>
         </li>

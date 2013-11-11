@@ -1,0 +1,12 @@
+<form name="eventEdit" ng-submit="save()" novalidate>
+    <input class="title" type="text" placeholder="Название" ng-model="event.name" required/>
+
+    <div class="pic"><img src="i/demo-wiki.jpg"></div>
+    <div class="info">
+        <textarea class="text" placeholder="Краткое описание" ng-model="event.shortInfo" required/>
+        <textarea class="text" placeholder="Полное описание" ng-model="event.fullInfo" required/>
+        <input class="btn btn-default" type="submit" ng-disabled="eventForm.$invalid" value="Создать" />
+        <div class="clearfix"></div>
+    </div>
+    <div>{{event.name}}</div>
+</form>

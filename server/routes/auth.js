@@ -37,11 +37,7 @@ passport.use(new GoogleStrategy({
 ));
 
 module.exports = function(app) {
-  app.get('/auth/google',
-    passport.authenticate('google', { failureRedirect: '/login' }),
-    function(req, res) {
-      res.redirect('/');
-    });
+  app.get('/auth/google', passport.authenticate('google', { failureRedirect: '/login' }));
 
 // GET /auth/google/return
 //   Use passport.authenticate() as route middleware to authenticate the

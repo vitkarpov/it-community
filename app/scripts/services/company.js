@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-  .factory('Company', function Company($resource) {
-    var Company = $resource('/api/companies/:id', {id:'@id'});
-    return Company;
+  .factory('CompanyService', function ($resource, ModelService, Model) {
+    var resource = $resource('/api/companies/:id', {id: '@id'}, { update: {method: 'PUT' } });
+    return new ModelService(resource, Model);
   });

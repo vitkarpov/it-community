@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clientApp', ['ngResource', 'ui.router'])
+angular.module('clientApp', ['ngResource', 'ui.router', 'xeditable', 'ngCookies'])
   .config(function ($stateProvider, $locationProvider, $httpProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -14,10 +14,12 @@ angular.module('clientApp', ['ngResource', 'ui.router'])
         url: '/',
         views: {
           'events': {
-            templateUrl: 'views/home.events.html'
+            templateUrl: 'views/home.events.html',
+            controller: 'EventsCtrl'
           },
           'companies': {
-            templateUrl: 'views/home.companies.html'
+            templateUrl: 'views/home.companies.html',
+            controller: 'CompaniesCtrl'
           },
           'news': {
             templateUrl: 'views/home.news.html'
@@ -36,12 +38,41 @@ angular.module('clientApp', ['ngResource', 'ui.router'])
       })
       .state('tabs.companies', {
         url: '/companies',
-        templateUrl: 'views/tabs.companies.html'
+        templateUrl: 'views/tabs.companies.html',
+        controller: 'CompaniesCtrl'
       })
       .state('tabs.events', {
+//        resolve:{
+//          // Example showing returning of custom made promise
+//          userObj: function(Auth) {
+//            return Auth.getUser();
+//          }
+//        },
         url: '/events',
-        templateUrl: 'views/tabs.events.html'
-      });
+        templateUrl: 'views/tabs.events.html',
+        controller: 'EventsCtrl'
+      })
+
+//      .state('tabs.events.item', {
+//        url: '/:eventId',
+//        templateUrl: 'views/event.add.html'
+//      })
+
+//      .state('tabs.events.add', {
+//        views: {
+//          'addEvent': {
+//            templateUrl: 'views/event.add.html',
+//            controller: ['$scope', '$stateParams',
+//              function (  $scope,   $stateParams) {
+//
+//              }]
+//          }
+//        }
+//      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'views/login.html'
+    });
 
     //$locationProvider.html5Mode(true);
     //$stateProvider
@@ -75,7 +106,7 @@ angular.module('clientApp', ['ngResource', 'ui.router'])
 //        redirectTo: '/'
 //      });
 
-    var interceptor = ['$location', '$q', function($location, $q) {
+    var interceptor = ['$state', '$q', function($state, $q) {
       function success(response) {
         return response;
       }
@@ -83,7 +114,7 @@ angular.module('clientApp', ['ngResource', 'ui.router'])
       function error(response) {
 
         if(response.status === 401) {
-          $location.path('/login');
+          $state.go('login');
           return $q.reject(response);
         }
         else {
@@ -96,9 +127,12 @@ angular.module('clientApp', ['ngResource', 'ui.router'])
       }
     }];
 
-    $httpProvider.responseInterceptors.push(interceptor);
+//    $httpProvider.responseInterceptors.push(interceptor);
   })
-  .run(['$rootScope', 'Company', function ($rootScope, Company) {
-    //TODO awww, this is so stupid & simple
-    $rootScope.companies = Company.query();
-  }]);
+  .run(function(editableOptions, Auth) {
+   var u = Auth.getUser().then(function(data) {
+     var i = data;
+   });
+
+    editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+  });

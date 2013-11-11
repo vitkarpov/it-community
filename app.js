@@ -7,7 +7,7 @@ var express = require('express');
 //var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-var api = require('./server/routes/api');
+//var api = require('./server/routes/api');
 var passport = require('passport');
 var mongoose = require('mongoose');
 var q = require('q');
@@ -32,7 +32,7 @@ function connectMongoose(config) {
       process.env.MONGOLAB_URI ||
         process.env.MONGOHQ_URL ||
         path.join(config.mongo.host, config.mongo.database);
-  mongoose.connect(uristring, function(err) {
+  mongoose.connect(uristring, function (err) {
     if (err)
       deferred.reject(err);
     else
@@ -45,7 +45,7 @@ function initExpress(config) {
   var app = express();
   // all environments
 
-  app.configure('all', function() {
+  app.configure('all', function () {
     app.set('port', process.env.PORT || config.http.port);
     // TODO move this to dev and production.
     // Or use config.
@@ -63,29 +63,20 @@ function initExpress(config) {
     app.use(app.router);
   });
 
-  app.configure('development', function() {
+  app.configure('development', function () {
     app.use(express.logger('dev'));
     app.use(express.errorHandler());
   });
 
-  app.configure('production', function() {
+  app.configure('production', function () {
     app.use(express.logger(''));
     // custom error handler
-    app.use(function(err, req, res) {
+    app.use(function (err, req, res) {
       res.json(err.status || 500, {error: err.message})
     });
   });
 
-  // GET
-  app.get('/api/companies', api.companiesList);
-  app.get('/api/events', api.eventsList);
-  app.get('/api/startups', api.startupsList);
-  app.get('/api/news', api.newsList);
-  app.get('/api/vacancies', api.vacanciesList);
-
-  // POST
-  app.post('/api/companies', ensureAuthenticated, api.createCompany);
-
+  require('./server/routes/api')(app);
   require('./server/routes/auth')(app);
 
   app.server = http.createServer(app);
@@ -104,14 +95,3 @@ configure()
     throw err
   })
   .done();
-
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.send(401);
-};
-
-function ensureAuthorized(req, res, next) {
-  //if ()
-}

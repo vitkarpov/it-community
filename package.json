@@ -47,11 +47,11 @@
   "dependencies": {
     "express": "~3.3.5",
     "jade": "*",
-    "mongoose": "~3.6.20",
     "confisto": "0.0.4",
     "q": "~0.9.7",
     "passport": "~0.1.17",
     "passport-google": "~0.3.0",
-    "bower": "~1.2.7"
+    "bower": "~1.2.7",
+    "mongoose": "~3.6.20"
   }
 }
