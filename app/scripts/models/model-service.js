@@ -16,48 +16,38 @@ angular.module('clientApp').factory('ModelService', function ($q) {
   }
 
   ModelService.prototype._updateModel = function (model) {
-    var deferred = $q.defer();
-    this.resource.update(model, function success(data) {
+    var promise = this.resource.update(model).$promise
+      .then(function success(data) {
         model.setData(data);
-        deferred.resolve(model);
-      },
-      function error(err) {
-        deferred.reject(err);
+        return model;
       });
-    return deferred.promise;
+    return promise;
   }
 
   ModelService.prototype.saveModel = function (model) {
     if (model.isSaved())
       return this._updateModel(model);
 
-    var deferred = $q.defer();
-    this.resource.save(model, function success(data) {
-        extend(model, data);
-        deferred.resolve(model);
-      },
-      function error(err) {
-        deferred.reject(err);
+    var promise = this.resource.save(model).$promise
+      .then(function success(data) {
+        model.setData(data);
+        return model;
       });
-    return deferred.promise;
+    return promise;
   }
 
   ModelService.prototype.query = function (queryParams) {
-    var deferred = $q.defer();
     var self = this;
-    this.resource.query(queryParams,
-      function success(result) {
+    var promise = this.resource.query(queryParams).$promise
+      .then(function success(result) {
         var models = [];
         result.forEach(function (element) {
           var model = self.createModel(element);
           models.push(model);
         });
-        deferred.resolve(models);
-      },
-      function error(err) {
-        deferred.reject(err);
+        return models;
       });
-    return deferred.promise;
+    return promise;
   }
 
   return ModelService;

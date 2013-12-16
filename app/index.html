@@ -25,7 +25,7 @@
     <link href="bower_components/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
     <!-- endbuild -->
 </head>
-<body ng-app="clientApp">
+<body ng-app="clientApp" ng-controller="AppCtrl as app">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
@@ -86,6 +86,7 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
 <!-- build:js scripts/plugins.js -->
 <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
@@ -124,6 +125,7 @@
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?101"></script>
 <script src="scripts/controllers/events.js"></script>
 <script src="scripts/controllers/edit-event.js"></script>
+<script src="scripts/controllers/auth.js"></script>
 <script src="scripts/models/event-model.js"></script>
 <script src="scripts/models/model-service.js"></script>
 <script src="scripts/models/model-list.js"></script>
@@ -131,10 +133,13 @@
 <script src="scripts/services/auth.js"></script>
 <script src="scripts/util.js"></script>
 <script src="scripts/directives/eventForm.js"></script>
+<script src="scripts/directives/authModal.js"></script>
 <script src="scripts/controllers/addEvent.js"></script>
 <script src="scripts/controllers/event.js"></script>
 <script src="scripts/services/auth.js"></script>
 <script src="scripts/services/user.js"></script>
+<script src="scripts/controllers/app.js"></script>
+<script src="scripts/services/authDialog.js"></script>
 <!-- endbuild -->
 </body>
 </html>

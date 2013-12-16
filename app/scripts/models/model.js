@@ -7,11 +7,11 @@ angular.module('clientApp').factory('Model', function() {
   var Model = function(service) {
     //angular.copy(this, data);
     //this.data = data;
-    this.__service = service;
+    this._service = service;
   };
 
   Model.prototype.save = function() {
-    return this.__service.saveModel(this);
+    return this._service.saveModel(this);
   }
 
   Model.prototype.setData = function(data) {

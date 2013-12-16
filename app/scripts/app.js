@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clientApp', ['ngResource', 'ui.router', 'xeditable', 'ngCookies'])
+angular.module('clientApp', ['ngResource', 'ui.router', 'xeditable', 'ngCookies', 'ui.bootstrap'])
   .config(function ($stateProvider, $locationProvider, $httpProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -130,9 +130,9 @@ angular.module('clientApp', ['ngResource', 'ui.router', 'xeditable', 'ngCookies'
 //    $httpProvider.responseInterceptors.push(interceptor);
   })
   .run(function(editableOptions, Auth) {
-   var u = Auth.getUser().then(function(data) {
-     var i = data;
-   });
+//   var u = Auth.getUser().then(function(data) {
+//     var i = data;
+//   });
 
     editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
   });
