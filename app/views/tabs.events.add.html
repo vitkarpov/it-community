@@ -1,0 +1,17 @@
+<div class="event" ng-controller="AddEventCtrl">
+
+    <form name="eventAdd" ng-submit="save()" novalidate>
+        <input class="title" type="text" placeholder="Название" ng-model="event.name" required/>
+
+        <div class="pic"><img src="i/demo-wiki.jpg"></div>
+        <div class="info">
+            <textarea class="text" placeholder="Краткое описание" ng-model="event.shortInfo" required/>
+            <textarea class="text" placeholder="Полное описание" ng-model="event.fullInfo" required/>
+            <input class="btn btn-primary" type="submit" ng-disabled="eventAdd.$invalid" value="Создать"/>
+            <button class="btn btn-default" type="button" ng-click="toggleForm()">Отмена</button>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+    <!--<event-form ng-show="showForm"></event-form>-->
+    <div class="clearfix"></div>
+</div>

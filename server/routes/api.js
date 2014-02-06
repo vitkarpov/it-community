@@ -7,6 +7,9 @@ var News = require('../models/news');
 var Startup = require('../models/startup');
 var User = require('../models/user');
 var mongoose = require('mongoose');
+var path = require('path');
+var fs = require('fs');
+var uuid = require('node-uuid');
 
 module.exports = function (app) {
   // GET
@@ -24,6 +27,8 @@ module.exports = function (app) {
 
   // Update
   app.put('/api/events/:eventId', ensureAuthenticated, updateEvent);
+
+  app.post('/api/events/:eventId/image', /*ensureAuthenticated,*/ updateEventImage);
 }
 
 function getList(model, req, res, next) {
@@ -160,6 +165,35 @@ function updateEvent(req, res, next) {
       next(err);
     }
   );
+}
+
+function updateEventImage(req, res, next) {
+  var filePath = req.files.file.path;
+//  var name = req.files.image.name;
+//  path.extname(name);
+
+  fs.readFile(filePath, function (err, data) {
+    var imageName = req.files.file.name
+
+    /// If there's an error
+    if(!imageName) {
+
+      next(err);
+
+    } else {
+      var ext = path.extname(imageName);
+      //TODO
+      var appDir = path.dirname(require.main.filename);
+      var newPath = appDir + "/uploads/fullsize/" + uuid.v4() + ext;
+
+      /// write file to uploads/fullsize folder
+      fs.writeFile(newPath, data, function (err) {
+        if (err)
+          next(err);
+      });
+    }
+  });
+
 }
 
 function ensureAuthenticated(req, res, next) {

@@ -1,34 +1,15 @@
+<!--<div ui-view></div>-->
 <div class="tab">
     <div class="tab-content">
-        <div class="event" ng-controller="AddEventCtrl">
-            <button type="button" ng-click="toggleForm()" class="btn btn-success" ng-hide="showForm">+Добавить</button>
-
-            <form name="eventAdd" ng-submit="save()" novalidate ng-show="showForm">
-                <input class="title" type="text" placeholder="Название" ng-model="event.name" required/>
-
-                <div class="pic"><img src="i/demo-wiki.jpg"></div>
-                <div class="info">
-                    <textarea class="text" placeholder="Краткое описание" ng-model="event.shortInfo" required/>
-                    <textarea class="text" placeholder="Полное описание" ng-model="event.fullInfo" required/>
-                    <input class="btn btn-primary" type="submit" ng-disabled="eventAdd.$invalid" value="Создать"/>
-                    <button class="btn btn-default" type="button" ng-click="toggleForm()">Отмена</button>
-                    <div class="clearfix"></div>
-                </div>
-            </form>
-            <!--<event-form ng-show="showForm"></event-form>-->
-            <div class="clearfix"></div>
-        </div>
+        <button type="button" ui-sref="tabs.events.add" class="btn btn-success">+Добавить</button>
 
         <div class="event" ng-repeat="event in events" ng-controller="EventCtrl">
-            <div ng-hide="edit">
-                <div class="title"><a ui-sref="tabs.events.item({eventId:123})">{{event.name}}</a><span
+                <div class="title"><a ui-sref="tabs.events.item({eventId:event.id})">{{event.name}}</a><span
                         class="new">Новое</span>
                 </div>
                 <div class="pic"><img src="i/demo-wiki.jpg"></div>
                 <div class="info">
                     <div class="text">{{event.shortInfo}}
-                    </div>
-                    <div class="text">{{event.fullInfo}}
                     </div>
                     <div class="participants">Участники: <span class="avatar"> <img
                             src="i/demo-avatar.jpg"></span><span class="avatar"> <img
@@ -36,36 +17,13 @@
                             src="i/demo-avatar.jpg"></span><span class="avatar"> <img
                             src="i/demo-avatar.jpg"></span><span class="more">и еще <b>20</b> человек </span>
                     </div>
-                    <!--<div class="org-date"><span class="org">Организатор: <a-->
-                            <!--ui-sref="tabs.users(userId:event.owner.id)">{{event.owner.name}}-->
-                        <!--{{event.owner.surname}}</a></span><span class="date">Дата мероприятия: <b>14.10.13</b></span>-->
-                    <!--</div>-->
+                    <div class="org-date"><span class="org">Организатор: <a
+                            ui-sref="tabs.users(userId:event.owner.id)">{{event.owner.name}}
+                        {{event.owner.surname}}</a></span><span class="date">Дата мероприятия: <b>14.10.13</b></span>
+                    </div>
                     <div class="clearfix"></div>
                 </div>
-                <button type="button" ng-click="editMe()" class="btn btn-default">Редактировать
-                </button>
-            </div>
-
-
-
-            <div ng-show="edit">
-                <!--ng-controller="EditEventCtrl"-->
-                <form name="eventEdit" ng-submit="save()" novalidate>
-                    <input class="title" type="text" placeholder="Название" ng-model="event.name" required/>
-
-                    <div class="pic"><img src="i/demo-wiki.jpg"></div>
-                    <div class="info">
-                        <textarea class="text" placeholder="Краткое описание" ng-model="event.shortInfo" required/>
-                        <textarea class="text" placeholder="Полное описание" ng-model="event.fullInfo" required/>
-                        <input class="btn btn-primary" type="submit" ng-disabled="eventEdit.$invalid"
-                               value="Сохранить"/>
-
-                        <button type="button" class="btn btn-default" ng-click="cancelEdit()">Отмена</button>
-                        <div class="clearfix"></div>
-                    </div>
-                </form>
-            </div>
-
+                <div class="watch-all"><a ui-sref="tabs.events.item({eventId:event.id})">Подробнее</a></div>
 
             <div class="clearfix"></div>
         </div>

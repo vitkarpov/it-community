@@ -1,9 +1,41 @@
-<ul class="nav nav-tabs">
-    <li><a ui-sref="tabs.events" >Мероприятия</a></li>
-    <li><a ui-sref="tabs.news" >Новости</a></li>
-    <li><a ui-sref="tabs.vacancies" >Вакансии</a></li>
-    <li><a ui-sref="tabs.companies" >Компании</a></li>
-    <li><a ui-sref="tabs.startups" >Стартапы</a></li>
-    <li><a ui-sref="tabs.users" >Личности</a></li>
-</ul>
+<tabset ng-controller="TabCtrl">
+    <tab select="alertMe()">
+        <tab-heading>
+            <a ui-sref="tabs.events">Мероприятия</a>
+        </tab-heading>
+    </tab>
+    <tab>
+        <tab-heading>
+            <a ui-sref="tabs.news">Новости</a>
+        </tab-heading>
+    </tab>
+    <tab>
+        <tab-heading>
+            <a ui-sref="tabs.vacancies">Вакансии</a>
+        </tab-heading>
+    </tab>
+    <tab>
+        <tab-heading>
+            <a ui-sref="tabs.companies">Компании</a>
+        </tab-heading>
+    </tab>
+    <tab>
+        <tab-heading>
+            <a ui-sref="tabs.startups">Стартапы</a>
+        </tab-heading>
+    </tab>
+    <tab>
+        <tab-heading>
+            <a ui-sref="tabs.users">Личности</a>
+        </tab-heading>
+    </tab>
+</tabset>
+<!--<ul class="nav nav-tabs">-->
+<!--<li><a ui-sref="tabs.events" >Мероприятия</a></li>-->
+<!--<li><a ui-sref="tabs.news" >Новости</a></li>-->
+<!--<li><a ui-sref="tabs.vacancies" >Вакансии</a></li>-->
+<!--<li><a ui-sref="tabs.companies" >Компании</a></li>-->
+<!--<li><a ui-sref="tabs.startups" >Стартапы</a></li>-->
+<!--<li><a ui-sref="tabs.users" >Личности</a></li>-->
+<!--</ul>-->
 <div ui-view></div>

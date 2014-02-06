@@ -84,6 +84,8 @@ function initExpress(config) {
   return app;
 }
 
+require('./server/amazon');
+
 configure()
   .then(connectMongoose)
   .then(initExpress)
