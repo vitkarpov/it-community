@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clientApp', ['ngResource', 'ui.router', 'xeditable', 'ngCookies', 'ui.bootstrap'])
+angular.module('clientApp', ['ngResource', 'ui.router', 'xeditable', 'ngCookies', 'ui.bootstrap', 'angularFileUpload'])
   .config(function ($stateProvider, $locationProvider, $httpProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -15,7 +15,7 @@ angular.module('clientApp', ['ngResource', 'ui.router', 'xeditable', 'ngCookies'
         views: {
           'events': {
             templateUrl: 'views/home.events.html',
-            controller: 'EventsCtrl'
+            controller: 'EventsListCtrl'
           },
           'companies': {
             templateUrl: 'views/home.companies.html',
@@ -42,33 +42,35 @@ angular.module('clientApp', ['ngResource', 'ui.router', 'xeditable', 'ngCookies'
         controller: 'CompaniesCtrl'
       })
       .state('tabs.events', {
-//        resolve:{
-//          // Example showing returning of custom made promise
-//          userObj: function(Auth) {
-//            return Auth.getUser();
-//          }
-//        },
         url: '/events',
         templateUrl: 'views/tabs.events.html',
-        controller: 'EventsCtrl'
+        controller: 'EventsListCtrl'
       })
-
-//      .state('tabs.events.item', {
-//        url: '/:eventId',
-//        templateUrl: 'views/event.add.html'
-//      })
-
-//      .state('tabs.events.add', {
-//        views: {
-//          'addEvent': {
-//            templateUrl: 'views/event.add.html',
+      .state('tabs.events.add', {
+        url: '/add',
+        views: {
+          '@tabs': {
+            templateUrl: 'views/tabs.events.add.html'//,
 //            controller: ['$scope', '$stateParams',
 //              function (  $scope,   $stateParams) {
 //
 //              }]
-//          }
-//        }
-//      })
+          }
+        }
+      })
+      .state('tabs.events.item', {
+        url: '/:eventId',
+        views: {
+          '@tabs' : {
+            templateUrl: 'views/tabs.events.item.html',
+            controller: 'EventCtrl'
+          }
+        }
+      })
+      .state('tabs.admin', {
+        url: '/admin',
+        templateUrl: 'views/tabs.admin.html'
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html'

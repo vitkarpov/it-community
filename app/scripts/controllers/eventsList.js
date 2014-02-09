@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-  .controller('EventsCtrl', function ($scope, EventService, $cacheFactory, EventList, $state, $stateParams) {
+  .controller('EventsListCtrl', function ($scope, EventService, $cacheFactory, EventList, $state, $stateParams) {
 
     if (EventList.items.length == 0) {
       EventList.query(3).then(function success(result) {
