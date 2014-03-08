@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 angular.module('clientApp').factory('Model', function() {
 
@@ -12,15 +12,17 @@ angular.module('clientApp').factory('Model', function() {
 
   Model.prototype.save = function() {
     return this._service.saveModel(this);
-  }
+  };
 
   Model.prototype.setData = function(data) {
-    data && extend(this, data);
-  }
+    if(data) {
+      extend(this, data);
+    }
+  };
 
   Model.prototype.isSaved = function() {
     return this.hasOwnProperty('id');
-  }
+  };
 
   return Model;
 

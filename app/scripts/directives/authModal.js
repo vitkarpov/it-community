@@ -1,26 +1,26 @@
 'use strict';
 
 angular.module('clientApp')
-  .directive('authModal', function () {
+  .directive('authModal', function() {
     return {
-        scope: {
-          title: '@'
-        },
+      scope: {
+        title: '@'
+      },
 
       transclude: true,
       templateUrl: 'views/authModal.html',
-//      restrict: 'EA',
+      //      restrict: 'EA',
       link: function(scope, element, attrs) {
         element.on('click', function(e) {
           e.preventDefault();
           element.modal('show');
         });
       }
-//      scope: {
-//        event: '='
-//      }
-//      link: function postLink(scope, element, attrs) {
-//        //element.text('this is the eventForm directive');
-//      }
+      //      scope: {
+      //        event: '='
+      //      }
+      //      link: function postLink(scope, element, attrs) {
+      //        //element.text('this is the eventForm directive');
+      //      }
     };
   });

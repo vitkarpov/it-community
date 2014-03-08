@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 angular.module('clientApp')
-  .factory('Auth', function (UserService) {
+  .factory('Auth', function(UserService) {
 
     this.currentUser = null;
 
@@ -14,11 +14,11 @@ angular.module('clientApp')
 
     this.me = function() {
       return this.currentUser;
-    }
+    };
 
     this.isAuthorized = function() {
       return this.currentUser === null;
-    }
+    };
 
     loadMe();
 

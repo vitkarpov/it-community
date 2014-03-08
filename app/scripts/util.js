@@ -1,4 +1,6 @@
-angular.inherits = function (ctor, superCtor) {
+'use strict';
+
+angular.inherits = function(ctor, superCtor) {
   ctor.super_ = superCtor;
   ctor.prototype = Object.create(superCtor.prototype, {
     constructor: {
@@ -6,4 +8,4 @@ angular.inherits = function (ctor, superCtor) {
       enumerable: false
     }
   });
-}
+};

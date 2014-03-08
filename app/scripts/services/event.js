@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-  .factory('EventService', function ($resource, ModelService, EventModel) {
+  .factory('EventService', function($resource, ModelService, EventModel) {
 
     function EventService(resource, model) {
       EventService.super_.apply(this, arguments);
@@ -9,6 +9,12 @@ angular.module('clientApp')
 
     angular.inherits(EventService, ModelService);
 
-    var resource = $resource('/api/events/:eventId', {eventId: '@id'}, { update: {method: 'PUT' } });
+    var resource = $resource('/api/events/:eventId', {
+      eventId: '@id'
+    }, {
+      update: {
+        method: 'PUT'
+      }
+    });
     return new EventService(resource, EventModel);
   });

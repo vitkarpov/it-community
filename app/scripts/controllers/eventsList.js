@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('clientApp')
-  .controller('EventsListCtrl', function ($scope, EventService, $cacheFactory, EventList, $state, $stateParams) {
+  .controller('EventsListCtrl', function($scope, EventService, $cacheFactory, EventList, $state, $stateParams) {
 
-    if (EventList.items.length == 0) {
+    if (EventList.items.length === 0) {
       EventList.query(3).then(function success(result) {
         $scope.events = result;
       });
@@ -11,14 +11,14 @@ angular.module('clientApp')
       $scope.events = EventList.items;
     }
 
-    $scope.moar = function () {
+    $scope.moar = function() {
       EventList.query(3).then(function success(result) {
         $scope.events = result;
       });
-    }
+    };
 
-    $scope.goAddEvent = function () {
+    $scope.goAddEvent = function() {
       $state.go('.add', $stateParams);
-    }
+    };
 
   });

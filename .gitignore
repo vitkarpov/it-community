@@ -3,3 +3,5 @@ client/dist
 .tmp
 .sass-cache
 bower_components/
+.idea
+npm-debug.log
