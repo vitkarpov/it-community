@@ -32,8 +32,8 @@ function populateCompany(query, options) {
 function populateEvent(query, options) {
   var promise = Event
     .find(query, null, options)
-  //.populate('owner participants', 'name surname image')
-  .exec();
+    .populate('owner participants', 'name surname image')
+    .exec();
   return promise;
 }
 
@@ -62,7 +62,6 @@ function eventsList(req, res, next) {
   populateEvent(null, options)
     .then(
       function success(events) {
-        var i = events[0].id;
         res.send(events);
       },
       function error(err) {
@@ -152,6 +151,17 @@ function updateEvent(req, res, next) {
   );
 }
 
+function updateUser(req, res, next) {
+  User.findById(req.params.userId).exec()
+    .then(function success(user) {
+        res.send(user);
+      },
+      function error(err) {
+        next(err);
+      }
+  );
+}
+
 function updateEventImage(req, res, next) {
   var filePath = req.files.file.path;
   //  var name = req.files.image.name;
@@ -185,7 +195,7 @@ function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
-  res.send(401);
+  return false;
 }
 
 function ensureAuthorized(req, res, next) {
@@ -193,19 +203,18 @@ function ensureAuthorized(req, res, next) {
 }
 
 module.exports = function(app) {
-  // GET
   app.get('/api/companies', companiesList);
-  app.get('/api/events', eventsList);
   app.get('/api/startups', startupsList);
   app.get('/api/news', newsList);
   app.get('/api/vacancies', vacanciesList);
-  app.get('/api/users/me', ensureAuthenticated, me);
 
-  // Create
   app.post('/api/companies', ensureAuthenticated, createCompany);
-  app.post('/api/events', ensureAuthenticated, createEvent);
 
-  // Update
+  app.get('/api/users/me', ensureAuthenticated, me);
+  app.put('/api/users/:userId', ensureAuthenticated, updateUser);
+
+  app.get('/api/events', eventsList);
+  app.post('/api/events', ensureAuthenticated, createEvent);
   app.put('/api/events/:eventId', ensureAuthenticated, updateEvent);
   app.post('/api/events/:eventId/image', /*ensureAuthenticated,*/ updateEventImage);
 };

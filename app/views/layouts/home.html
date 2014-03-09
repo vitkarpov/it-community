@@ -3,34 +3,34 @@
         <div ui-view="events"></div>
     </div>
     <div class="right-col">
-
-        <div data-ng-controller="AuthCtrl as auth" data-ng-hide="auth.isLoggedIn" class="right-login"><a href="#" ng-click="auth.open()">Войти в IT <span>☺</span></a></div>
-
+        <div data-ng-controller="AuthCtrl as auth" data-ng-hide="auth.isLoggedIn" class="right-login">
+        <a href="#" ng-click="auth.open()">Войти в IT <span>☺</span></a>
         </div>
 
-        <!-- VK Widget -->
-        <div id="vk_groups"></div>
+    <div id="vk_groups">
         <script type="text/javascript">
-            VK.Widgets.Group("vk_groups", {mode: 0, width: "249", height: "400", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 55614321);
+        VK.Widgets.Group("vk_groups", {mode: 0, width: "249", height: "400", color1: 'FFFFFF', color2: '2B587A', color3: '5B7FA6'}, 55614321);
         </script>
-        <div class="right-tags">
-            <p>Тег на Хабре: <a href="#">itevents</a></p>
-            <p>Тег в Твиттере: <a href="#">#itevents</a></p>
-        </div>
-        <div class="right-persons">
-            <div class="title"><a href="#">Личности</a></div>
-            <div class="avatars"><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
-                    src="i/demo-avatar2.jpg"></a><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
-                    src="i/demo-avatar2.jpg"></a><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
-                    src="i/demo-avatar2.jpg"></a><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
-                    src="i/demo-avatar2.jpg"></a>
-
-                <div class="clearfix"></div>
-            </div>
-        </div>
     </div>
-    <div class="clearfix"></div>
+    <div class="right-tags">
+        <p>Тег на Хабре: <a href="#">itevents</a></p>
+        <p>Тег в Твиттере: <a href="#">#itevents</a></p>
+    </div>
+    <!-- <div class="right-persons">
+        <div class="title"><a href="#">Личности</a></div>
+        <div class="avatars"><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
+                src="i/demo-avatar2.jpg"></a><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
+                src="i/demo-avatar2.jpg"></a><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
+                src="i/demo-avatar2.jpg"></a><a href="#"><img src="i/demo-avatar2.jpg"></a><a href="#"><img
+                src="i/demo-avatar2.jpg"></a>
+
+            <div class="clearfix"></div>
+        </div>
+    </div> -->
+    </div>
 </div>
+<div class="clearfix"></div>
+
 <div class="content-bottom">
     <div class="tab tab-left">
         <div ui-view="news"></div>

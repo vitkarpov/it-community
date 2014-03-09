@@ -2,7 +2,7 @@
     <div class="tab-title"><span>Мероприятия</span></div>
     <div class="tab-content">
         <div class="event" ng-repeat="event in events | limitTo:3">
-            <div class="title"><a href="/events/3222">{{event.name}}</a><span
+            <div class="title"><a ui-sref="tabs.events.item({eventId:event.id})">{{event.name}}</a><span
                     class="new">Новое</span>
             </div>
             <div class="pic"><img src="i/demo-wiki.jpg"></div>
@@ -15,7 +15,7 @@
                         src="i/demo-avatar.jpg"></span><span class="avatar"> <img
                         src="i/demo-avatar.jpg"></span><span class="more">и еще <b>20</b> человек </span>
                 </div>
-                <div class="org-date"><span class="org">Организатор: <a ui-sref="tabs.users(userId:event.owner.id)">{{event.owner.name}}
+                <div class="org-date"><span class="org">Организатор: <a ui-sref="tabs.users.item({userId:event.owner.id})">{{event.owner.name}}
                     {{event.owner.surname}}</a></span><span class="date">Дата мероприятия: <b>14.10.13</b></span>
                 </div>
                 <div class="clearfix"></div>

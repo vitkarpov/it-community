@@ -3,10 +3,10 @@
 angular.module('clientApp')
   .factory('Auth', function(UserService) {
 
+    var self = this;
     this.currentUser = null;
 
     function loadMe() {
-      var self = this;
       UserService.me().then(function(user) {
         self.currentUser = user;
       });
