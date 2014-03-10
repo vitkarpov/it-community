@@ -4,11 +4,8 @@
 'use strict';
 
 var express = require('express');
-//var routes = require('./routes');
-//var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-//var api = require('./server/routes/api');
 var passport = require('passport');
 var mongoose = require('mongoose');
 var q = require('q');

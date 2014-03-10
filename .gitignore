@@ -1,7 +1,5 @@
 node_modules/
-client/dist
-.tmp
-.sass-cache
 bower_components/
+app/build/
 .idea
 npm-debug.log
